@@ -50,12 +50,18 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-      <h1>file_processed Analytics</h1>
-      <div className="summary">
+      <h1>Analytics</h1>
+      <div className="summary top-summary">
         <div className="card">
-          <span className="num">{stats.allTime}</span>
-          <span className="label">All time</span>
+          <span className="num">{stats.last24Hours}</span>
+          <span className="label">Last 24 hours</span>
         </div>
+        <div className="card">
+          <span className="num">{stats.last48Hours}</span>
+          <span className="label">Last 48 hours</span>
+        </div>
+      </div>
+      <div className="summary">
         <div className="card">
           <span className="num">{stats.last7Days}</span>
           <span className="label">Last 7 days</span>
@@ -63,6 +69,10 @@ function Dashboard() {
         <div className="card">
           <span className="num">{stats.last30Days}</span>
           <span className="label">Last 30 days</span>
+        </div>
+        <div className="card">
+          <span className="num">{stats.allTime}</span>
+          <span className="label">All time</span>
         </div>
       </div>
       <h2>Daily counts (last 30 days)</h2>
