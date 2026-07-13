@@ -10,6 +10,7 @@ function BarChart({ data }) {
     <div className="chart">
       {data.map((d) => (
         <div key={d.date} className="bar-wrap">
+          <span className="bar-count">{d.count > 0 ? d.count : ''}</span>
           <div
             className="bar"
             style={{ height: `${(d.count / max) * 160}px` }}
@@ -28,14 +29,20 @@ function Dashboard() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/analytics")
-      .then((r) => {
-        if (!r.ok) throw new Error(`HTTP ${r.status}`);
-        return r.json();
-      })
-      .then(setStats)
-      .catch((e) => setError(e.message))
-      .finally(() => setLoading(false));
+    function load() {
+      fetch("/api/analytics")
+        .then((r) => {
+          if (!r.ok) throw new Error(`HTTP ${r.status}`);
+          return r.json();
+        })
+        .then(setStats)
+        .catch((e) => setError(e.message))
+        .finally(() => setLoading(false));
+    }
+
+    load()
+    const interval = setInterval(load, 6 * 60 * 60 * 1000)
+    return () => clearInterval(interval)
   }, []);
 
   if (loading) return <p className="status">Loading...</p>;
