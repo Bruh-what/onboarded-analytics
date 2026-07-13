@@ -10,7 +10,7 @@ function BarChart({ data }) {
     <div className="chart">
       {data.map((d) => (
         <div key={d.date} className="bar-wrap">
-          <span className="bar-count">{d.count > 0 ? d.count : ''}</span>
+          <span className="bar-count">{d.count > 0 ? d.count : ""}</span>
           <div
             className="bar"
             style={{ height: `${(d.count / max) * 160}px` }}
@@ -40,9 +40,9 @@ function Dashboard() {
         .finally(() => setLoading(false));
     }
 
-    load()
-    const interval = setInterval(load, 6 * 60 * 60 * 1000)
-    return () => clearInterval(interval)
+    load();
+    const interval = setInterval(load, 6 * 60 * 60 * 1000);
+    return () => clearInterval(interval);
   }, []);
 
   if (loading) return <p className="status">Loading...</p>;

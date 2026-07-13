@@ -1,5 +1,15 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: system-ui, sans-serif; background: #f8fafc; color: #374151; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #374151;
+}
 
 .gate {
   display: flex;
@@ -10,8 +20,16 @@ body { font-family: system-ui, sans-serif; background: #f8fafc; color: #374151; 
   gap: 1.5rem;
   padding: 1rem;
 }
-.gate h1 { font-size: 1.8rem; color: #111827; }
-.gate form { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
+.gate h1 {
+  font-size: 1.8rem;
+  color: #111827;
+}
+.gate form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .gate input {
   padding: 0.6rem 1rem;
   border-radius: 1px;
@@ -22,7 +40,9 @@ body { font-family: system-ui, sans-serif; background: #f8fafc; color: #374151; 
   width: 220px;
   outline: none;
 }
-.gate input:focus { border-color: #2563eb; }
+.gate input:focus {
+  border-color: #2563eb;
+}
 .gate button {
   padding: 0.6rem 1.2rem;
   border-radius: 1px;
@@ -32,14 +52,40 @@ body { font-family: system-ui, sans-serif; background: #f8fafc; color: #374151; 
   font-size: 1rem;
   cursor: pointer;
 }
-.gate button:hover { background: #1d4ed8; }
+.gate button:hover {
+  background: #1d4ed8;
+}
 
-.status { text-align: center; margin-top: 4rem; font-size: 1.2rem; color: #374151; }
-.error { color: #dc2626; margin-top: 0.5rem; }
+.status {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 1.2rem;
+  color: #374151;
+}
+.error {
+  color: #dc2626;
+  margin-top: 0.5rem;
+}
 
-.dashboard { max-width: 960px; margin: 0 auto; padding: 2rem 1.25rem; }
-.dashboard h1 { font-size: 1.5rem; font-weight: 700; color: #111827; margin-bottom: 1.25rem; }
-.dashboard h2 { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin: 2rem 0 0.75rem; color: #6b7280; }
+.dashboard {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+.dashboard h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.25rem;
+}
+.dashboard h2 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 2rem 0 0.75rem;
+  color: #6b7280;
+}
 
 .summary {
   display: grid;
@@ -52,9 +98,15 @@ body { font-family: system-ui, sans-serif; background: #f8fafc; color: #374151; 
 }
 
 @media (max-width: 600px) {
-  .summary { grid-template-columns: repeat(2, 1fr); }
-  .top-summary { grid-template-columns: repeat(2, 1fr); }
-  .summary:not(.top-summary) .card:last-child:nth-child(odd) { grid-column: span 2; }
+  .summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .top-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .summary:not(.top-summary) .card:last-child:nth-child(odd) {
+    grid-column: span 2;
+  }
 }
 
 .card {
@@ -67,8 +119,15 @@ body { font-family: system-ui, sans-serif; background: #f8fafc; color: #374151; 
   align-items: center;
   gap: 0.25rem;
 }
-.card .num { font-size: 2rem; font-weight: 700; color: #2563eb; }
-.card .label { font-size: 0.8rem; color: #6b7280; }
+.card .num {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+.card .label {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
 
 .chart {
   display: flex;
@@ -89,6 +148,20 @@ body { font-family: system-ui, sans-serif; background: #f8fafc; color: #374151; 
   flex: 1;
   min-width: 16px;
 }
-.bar-count { font-size: 0.55rem; color: #2563eb; font-weight: 600; min-height: 0.8rem; }
-.bar { width: 100%; background: #2563eb; border-radius: 1px 1px 0 0; min-height: 2px; }
-.bar-label { font-size: 0.55rem; color: #9ca3af; white-space: nowrap; }
+.bar-count {
+  font-size: 0.55rem;
+  color: #2563eb;
+  font-weight: 600;
+  min-height: 0.8rem;
+}
+.bar {
+  width: 100%;
+  background: #2563eb;
+  border-radius: 1px 1px 0 0;
+  min-height: 2px;
+}
+.bar-label {
+  font-size: 0.55rem;
+  color: #9ca3af;
+  white-space: nowrap;
+}
